@@ -1,7 +1,7 @@
-from led_light import Led_light
+from led_light import Led_Light
 from time import sleep, time
 
-led = Led_light(3, flashing=True, debug=True)
+led = Led_Light(3, flashing=True, debug=True)
 
 print("Testing on()")
 led.on()

@@ -1,16 +1,16 @@
 from machine import Pin
 from time import sleep, time
 
-class Led_light(Pin):
+class Led_Light(Pin):
     #inhereitance using Pin class
-    def __init__(self, pin, flashing=False, debug=False):
+    def __init__(self, pin, flashing=False, debug=False,):
         super().__init__(pin, Pin.OUT)
         #defines state
         self.led_light_state
         self.__debug = debug
         self.__pin = pin
         self.__flashing = flashing
-        self.__last_toogle_time = time()
+        self.__last_toggle_time = time()
 
     def on(self):
         #overirde polymorphism of class 
