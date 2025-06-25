@@ -17,6 +17,8 @@ amber = Led_Light(6, False, True)
 green = Led_Light(9, False, True)
 
 light = TrafficLightSubsystem(red, amber, green, False)
+walking = PedestrianSubsystem(led_ped_red, led_ped_green, warning, False)
+
 
 def Traffic_Subsystem_driver():
     #Test Red Light
@@ -42,3 +44,27 @@ def Traffic_Subsystem_driver():
 
 
 Traffic_Subsystem_driver()
+
+def Pedestrian_Subsystem_driver():
+    #Test Stop
+    print("Testing Pedastrian Light In 5 Seconds")
+    sleep(5)
+    walking.show_stop()
+    print("Pass if: Green OFF, Red ON and Not Flashing")
+    sleep(10)
+    
+    #Test Walk
+    print("Testing Pedastrian Light In 5 Seconds")
+    sleep(5)
+    walking.show_walk()
+    print("Pass if: Green ON, Red OFF and Not Flashing")
+    sleep(10)
+    
+    #Test Warning
+    print("Testing Pedastrian Light In 5 Seconds")
+    sleep(5)
+    walking.show_warning()
+    print("Pass if: Green OFF, Red ON and Flashing")
+    sleep(10)
+
+    Pedestrian_Subsystem_driver()
