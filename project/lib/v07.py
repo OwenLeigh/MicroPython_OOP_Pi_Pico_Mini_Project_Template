@@ -3,6 +3,7 @@ from project.lib.controller import TrafficLightSubsystem, PedestrianSubsystem
 from pedestrian_button import Pedestrian_Button
 from audio_notification import Audio_Notification
 from time import sleep, time
+from controller import Controller
 
 led_ped_red = Led_Light(19, True, True)
 led_ped_green = Led_Light(17, False, True)
@@ -18,6 +19,7 @@ green = Led_Light(9, False, True)
 
 light = TrafficLightSubsystem(red, amber, green, False)
 walking = PedestrianSubsystem(led_ped_red, led_ped_green, warning, False)
+control = Controller(ped_red, ped_green, )
 
 
 def Traffic_Subsystem_driver():
@@ -68,3 +70,7 @@ def Pedestrian_Subsystem_driver():
     sleep(10)
 
     Pedestrian_Subsystem_driver()
+
+def Controller_subsytem_driver()
+    print("Testing IDLE State")
+    sleep(3)
